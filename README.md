@@ -30,6 +30,6 @@ Get up and running in seconds. For full requirements and setup details, see the 
 ### 1. Install Dependencies
 AegisCrypt is lightweight and only relies on the widely trusted `cryptography` library.
 ```bash
-git clone [https://github.com/Raj123-0/AegisCrypt.git](https://github.com/Raj123-0/AegisCrypt.git)
+git https://github.com/Raj123-0/AegisCrypt.git
 cd AegisCrypt
 pip install cryptography
