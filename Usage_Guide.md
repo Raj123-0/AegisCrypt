@@ -1,4 +1,4 @@
-# Usage Guide 💻
+# Usage Guide 
 
 AegisCrypt offers a clean interactive menu for casual use, and robust CLI arguments for automation.
 
