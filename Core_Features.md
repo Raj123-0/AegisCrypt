@@ -1,4 +1,4 @@
-# Core Features ✨
+# Core Features 
 
 AegisCrypt is built with security and usability in mind. Here is a deeper dive into the core features:
 
