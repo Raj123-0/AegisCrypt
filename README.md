@@ -15,11 +15,11 @@ AegisCrypt ensures your secrets stay secure by strictly keeping keys out of your
 
 For a deep dive into the architecture and full documentation, check out the detailed guides:
 
-1. [Core Features](Core_Features.md)[cite: 7]
-2. [Installation](Installation.md)[cite: 7]
-3. [Usage Guide](Usage_Guide.md)[cite: 7]
-4. [Payload Architecture](Payload_Architecture.md)[cite: 7]
-5. [Author & Contributions](Author_and_Contributions.md)[cite: 7]
+1. [Core Features](Core_Features.md)
+2. [Installation](Installation.md)
+3. [Usage Guide](Usage_Guide.md)
+4. [Payload Architecture](Payload_Architecture.md)
+5. [Author & Contributions](Author_and_Contributions.md)
 
 ---
 
