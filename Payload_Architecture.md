@@ -1,4 +1,4 @@
-# Payload Architecture 🧩
+# Payload Architecture 
 
 AegisCrypt generates a versioned binary blob before encoding it to Base64. This securely bundles the cryptographic parameters with the ciphertext.
 
