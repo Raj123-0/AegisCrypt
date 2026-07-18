@@ -1,4 +1,4 @@
-# Installation 🚀
+# Installation 
 
 AegisCrypt is lightweight and only relies on the widely trusted `cryptography` library.
 
