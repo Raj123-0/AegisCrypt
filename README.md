@@ -7,7 +7,7 @@
 
 > A cryptographically strong symmetric cipher utility built in Python for runtime-only authenticated encryption[cite: 7]. 
 
-AegisCrypt ensures your secrets stay secure by strictly keeping keys out of your source code[cite: 7]. By leveraging modern cryptographic primitives—specifically **AES-GCM** for authenticated encryption and **PBKDF2-HMAC-SHA256** for robust key derivation—it guarantees both the confidentiality and the integrity of your data[cite: 6, 7]. This is a real cryptographic construction designed for secure key management, not a custom toy cipher[cite: 1, 6].
+AegisCrypt ensures your secrets stay secure by strictly keeping keys out of your source code. By leveraging modern cryptographic primitives—specifically **AES-GCM** for authenticated encryption and **PBKDF2-HMAC-SHA256** for robust key derivation—it guarantees both the confidentiality and the integrity of your data. This is a real cryptographic construction designed for secure key management, not a custom toy cipher.
 
 ---
 
@@ -25,11 +25,11 @@ For a deep dive into the architecture and full documentation, check out the deta
 
 ##  Quick Start
 
-Get up and running in seconds. For full requirements and setup details, see the [Installation](Installation.md) guide[cite: 7].
+Get up and running in seconds. For full requirements and setup details, see the [Installation](Installation.md) guide.
 
 ### 1. Install Dependencies
-AegisCrypt is lightweight and only relies on the widely trusted `cryptography` library[cite: 5].
+AegisCrypt is lightweight and only relies on the widely trusted `cryptography` library.
 ```bash
-git clone [https://github.com/_ranveerpardeshi_/AegisCrypt.git](https://github.com/_ranveerpardeshi_/AegisCrypt.git)[cite: 5]
-cd AegisCrypt[cite: 5]
-pip install cryptography[cite: 5]
+git clone [https://github.com/Raj123-0/AegisCrypt.git](https://github.com/Raj123-0/AegisCrypt.git)
+cd AegisCrypt
+pip install cryptography
