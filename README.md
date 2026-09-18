@@ -1,35 +1,30 @@
-# AegisCrypt 
+# Aegiscrypt
 
-![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Security](https://img.shields.io/badge/security-AES--GCM-red)
-![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![CI](https://github.com/Raj123-0/AegisCrypt/actions/workflows/ci.yml/badge.svg)](https://github.com/Raj123-0/AegisCrypt/actions)
 
-> A cryptographically strong symmetric cipher utility built in Python for runtime-only authenticated encryption[cite: 7]. 
 
-AegisCrypt ensures your secrets stay secure by strictly keeping keys out of your source code. By leveraging modern cryptographic primitives—specifically **AES-GCM** for authenticated encryption and **PBKDF2-HMAC-SHA256** for robust key derivation—it guarantees both the confidentiality and the integrity of your data. This is a real cryptographic construction designed for secure key management, not a custom toy cipher.
+AegisCrypt ensures your secrets stay secure by strictly keeping keys out of your source code. By leveraging modern cryptographic primitives, it guarantees both the confidentiality and the integrity of your data.
 
----
+## Overview
 
-##  Table of Contents
+`AegisCrypt` provides algorithmic implementations and mathematical models for scientific and cryptographic applications, focusing on numerical stability, invariant verification, and performance.
 
-For a deep dive into the architecture and full documentation, check out the detailed guides:
+## Getting Started
 
-1. [Core Features](Core_Features.md)
-2. [Installation](Installation.md)
-3. [Usage Guide](Usage_Guide.md)
-4. [Payload Architecture](Payload_Architecture.md)
-5. [Author & Contributions](Author_and_Contributions.md)
-
----
-
-##  Quick Start
-
-Get up and running in seconds. For full requirements and setup details, see the [Installation](Installation.md) guide.
-
-### 1. Install Dependencies
-AegisCrypt is lightweight and only relies on the widely trusted `cryptography` library.
 ```bash
-git https://github.com/Raj123-0/AegisCrypt.git
+git clone https://github.com/Raj123-0/AegisCrypt.git
 cd AegisCrypt
-pip install cryptography
+pip install -r requirements.txt
+```
+
+Run the automated verification suite:
+
+```bash
+pytest tests/
+```
+
+## License
+
+Licensed under the [MIT License](LICENSE).
