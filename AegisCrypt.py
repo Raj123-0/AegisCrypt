@@ -1,13 +1,16 @@
+"""Module for mathematical computation and analysis."""
+
+from pathlib import Path
+from textwrap import dedent
 import argparse
 import base64
 import os
 import sys
-from pathlib import Path
-from textwrap import dedent
 
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
 
 MAGIC = b"CX"
 VERSION = 2
@@ -19,6 +22,17 @@ KEY_LEN = 32
 
 
 def derive_key(password: str, salt: bytes, iterations: int = DEFAULT_ITERATIONS) -> bytes:
+    """Derive key.
+    
+    Args:
+        password:
+        salt:
+        iterations:
+    
+    Returns:
+        The computed result
+    
+    """
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=KEY_LEN,
@@ -29,6 +43,9 @@ def derive_key(password: str, salt: bytes, iterations: int = DEFAULT_ITERATIONS)
 
 
 def print_banner() -> None:
+    """Print banner.
+    
+    """
     print("\n" + "=" * 78)
     print(" CipherX — runtime-only authenticated encryption")
     print(" Key stays out of source and is only requested at runtime.")
@@ -36,11 +53,31 @@ def print_banner() -> None:
 
 
 def prompt_secret(prompt: str = "Secret key: ") -> str:
+    """Prompt secret.
+    
+    Args:
+        prompt (str):
+    
+    Returns:
+        The computed result
+    
+    """
     print(prompt, end="", flush=True)
     return input()
 
 
 def resolve_key(key: str | None, key_file: str | None, key_env: str | None = None) -> str:
+    """Resolve key.
+    
+    Args:
+        key:
+        key_file:
+        key_env:
+    
+    Returns:
+        The computed result
+    
+    """
     provided_sources = [key is not None, key_file is not None, key_env is not None]
     if sum(provided_sources) > 1:
         raise ValueError("Provide only one of: key, --key-file, or --key-env.")
@@ -63,6 +100,15 @@ def resolve_key(key: str | None, key_file: str | None, key_env: str | None = Non
 
 
 def _parse_blob(blob: bytes):
+    """Load and parse blob.
+    
+    Args:
+        blob (list):
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     if blob.startswith(MAGIC):
         if len(blob) < 2 + 1 + 4 + SALT_LEN + NONCE_LEN + 16:
             raise ValueError("Ciphertext is too short.")
@@ -90,6 +136,17 @@ def _parse_blob(blob: bytes):
 
 
 def encrypt(message: str, key: str, iterations: int = DEFAULT_ITERATIONS) -> str:
+    """Encrypt.
+    
+    Args:
+        message:
+        key:
+        iterations:
+    
+    Returns:
+        The computed result
+    
+    """
     if iterations < 1000:
         raise ValueError("Iterations must be at least 1000 for a secure KDF.")
 
@@ -106,6 +163,16 @@ def encrypt(message: str, key: str, iterations: int = DEFAULT_ITERATIONS) -> str
 
 
 def decrypt(ciphertext_b64: str, key: str) -> str:
+    """Decrypt.
+    
+    Args:
+        ciphertext_b64:
+        key:
+    
+    Returns:
+        The computed result
+    
+    """
     try:
         blob = base64.b64decode(ciphertext_b64)
     except Exception as exc:
@@ -127,7 +194,12 @@ def decrypt(ciphertext_b64: str, key: str) -> str:
 
 
 # ---------- Interactive menu (loops so you can process many messages) ----------
+
+
 def interactive_menu():
+    """Interactive menu.
+    
+    """
     print_banner()
     while True:
         print("\n[1] Encode a message")
@@ -157,7 +229,12 @@ def interactive_menu():
 
 
 # ---------- Command-line interface ----------
+
+
 def main():
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     parser = argparse.ArgumentParser(
         description=dedent(
             """
